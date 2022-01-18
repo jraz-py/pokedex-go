@@ -63,6 +63,8 @@ func getPokemon(uri string) Pokemon {
 	return p
 }
 
+//BuildPokedex accepts a / semaphore, an amount of
+//pokemon to get and a url from which to aquire pokemon data
 func BuildPokedex(sem *sem, pokeToGet int, uri string) []Pokemon {
 	wg := sync.WaitGroup{}
 	pokeChan := make(chan Pokemon, pokeToGet)

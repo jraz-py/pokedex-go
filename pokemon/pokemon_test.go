@@ -40,7 +40,6 @@ func Test_getPokemon(t *testing.T) {
 	tests := []struct {
 		name string
 		want Pokemon
-		err  error
 	}{
 		{
 			name: "testOne",
@@ -83,7 +82,6 @@ func Test_BuildPokedex(t *testing.T) {
 	tests := []struct {
 		name string
 		want []Pokemon
-		err  error
 	}{
 		{
 			name: "testOne",
@@ -153,46 +151,3 @@ func equal(a, b []Pokemon) bool {
 	}
 	return true
 }
-
-// func Test_String(t *testing.T) {
-// 	elementType := []struct {
-// 		ElemType struct {
-// 			Name string `json:"name"`
-// 		} `json:"type"`
-// 	}{
-// 		{
-// 			ElemType: struct{ Name string }{
-// 				Name: "burn",
-// 			},
-// 		},
-// 	}
-
-// 	p := Pokemon{
-// 		ID:     1,
-// 		Name:   "charmander",
-// 		Wieght: 200,
-// 		Type:   elementType,
-// 	}
-
-// 	tests := []struct {
-// 		name string
-// 		want string
-// 	}{
-// 		{
-// 			name: "testOne",
-// 			want: fmt.Sprintf(
-// 				"ID: %d - NAME: %s - WEIGHT: %d - TYPE: %s - ATTACK-MOVE: %s",
-// 				p.ID, p.Name, p.Wieght, p.Type[0].ElemType.Name, p.AttackMove[0].Moves.Name),
-// 		},
-// 	}
-
-// 	for _, tt := range tests {
-// 		t.Run(tt.name, func(t *testing.T) {
-
-// 			if p.String() != tt.want {
-// 				fmt.Printf("got %v want %v", tt.want, p.String())
-// 			}
-
-// 		})
-// 	}
-// }
